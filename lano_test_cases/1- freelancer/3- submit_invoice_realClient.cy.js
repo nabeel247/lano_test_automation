@@ -66,7 +66,7 @@ describe('Invoice creation', () => {
         // // click on 'create & submit' button for final confirmation step
         cy.get('.in > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click()
 
-        cy.get('#beneficiary_required_fields_account_number').type('123456')
+        cy.get('[name="beneficiary[required_fields][account_number]"]').type('123456')
         cy.get('[value="Proceed"]').click()
       })
 
