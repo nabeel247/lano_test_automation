@@ -1,7 +1,7 @@
-describe('Task creation', () => {
+describe('Project creation', () => {
 
-    it('Create task as a client', () => {
-        cy.viewport(1280, 720)
+    it('Login as a client', () => {
+        cy.viewport(1366, 768)
         cy.visit('https://staging.lano.io/en/login')
         cy.get('#user_email').type('nabeel.ahmed+10022@lano.io')
         cy.get('#user_password').type('Testuser123!') 
@@ -9,10 +9,11 @@ describe('Task creation', () => {
 
         // select 1 of the company accounts (currency cloud)
         cy.get(':nth-child(2) > .radio-label').click()
-
-        // select 1 of the company accounts (currency cloud)
         cy.get('[data-target="employee-company-selection.companyLink"]').click()
-        
+
+    })
+
+    it('Create project', () => {    
       
         let random_2_digits = Math.floor(Math.random() * 99);
 
@@ -34,12 +35,6 @@ describe('Task creation', () => {
 
         // click 'create' button
         cy.get('[type="submit"]').click()
-
-        // click 'create' button
-        cy.get('#missing-folder-url > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click()
-
-        
-        
       })
 
     

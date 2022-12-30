@@ -1,13 +1,14 @@
-describe('Invoice creation', () => {
+describe('Create & submit invoice to a real client', () => {
 
-    it('Create and submit an invoice', () => {
-        cy.viewport(1280, 720)
+    it('Login as a freelancer', () => {
+        //cy.viewport(1280, 720)
         cy.visit('https://staging.lano.io/en/login')
         cy.get('#user_email').type('nabeel.ahmed+1578@lano.io')
         cy.get('#user_password').type('Testuser123!') 
         cy.contains('Sign in').click()
-    
+    })
 
+    it('create and submit invoice', () => {
         // Goto invoices
         cy.get('#side-menu > li:nth-child(7) > a').click()
 

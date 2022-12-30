@@ -1,6 +1,6 @@
 describe('Task creation', () => {
 
-    it('Create task as a client', () => {
+    it('Login as a client', () => {
         cy.viewport(1280, 720)
         cy.visit('https://staging.lano.io/en/login')
         cy.get('#user_email').type('nabeel.ahmed+10022@lano.io')
@@ -10,7 +10,11 @@ describe('Task creation', () => {
         // select 1 of the company accounts (currency cloud)
         cy.get(':nth-child(2) > .radio-label').click()
         cy.get('[data-target="employee-company-selection.companyLink"]').click()
+
+    })
       
+    it('Create task', () => {
+        
         let random_2_digits = Math.floor(Math.random() * 99);
 
         // Goto tasks
