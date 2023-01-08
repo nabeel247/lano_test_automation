@@ -1,14 +1,12 @@
-describe('Create & submit invoice to a real client', () => {
+describe('Submit invoice to a real client', () => {
 
-    it('Login as a freelancer', () => {
+    it('Create an invoice & send it to a real client', () => {
         //cy.viewport(1280, 720)
         cy.visit('https://staging.lano.io/en/login')
         cy.get('#user_email').type('nabeel.ahmed+1578@lano.io')
         cy.get('#user_password').type('Testuser123!') 
         cy.contains('Sign in').click()
-    })
 
-    it('create and submit invoice', () => {
         // Goto invoices
         cy.get('#side-menu > li:nth-child(7) > a').click()
 
@@ -19,7 +17,7 @@ describe('Create & submit invoice to a real client', () => {
         cy.get('div.add_client.invoice-add-client.invoice-page--add-client').click()
 
         // find & click a real client
-        cy.contains('beyond').click()
+        cy.contains('Serhii Company').click()
 
         // Click select button for detached invoice 
         cy.get('[data-invoice-type="detached"]').click() 
@@ -66,9 +64,7 @@ describe('Create & submit invoice to a real client', () => {
         
         // // click on 'create & submit' button for final confirmation step
         cy.get('.in > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click()
-
-        cy.get('[name="beneficiary[required_fields][account_number]"]').type('123456')
-        cy.get('[value="Proceed"]').click()
+        
       })
 
     

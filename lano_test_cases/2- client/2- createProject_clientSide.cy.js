@@ -1,6 +1,6 @@
 describe('Project creation', () => {
 
-    it('Login as a client', () => {
+    it('Create project as a client', () => {
         cy.viewport(1366, 768)
         cy.visit('https://staging.lano.io/en/login')
         cy.get('#user_email').type('nabeel.ahmed+10022@lano.io')
@@ -10,10 +10,6 @@ describe('Project creation', () => {
         // select 1 of the company accounts (currency cloud)
         cy.get(':nth-child(2) > .radio-label').click()
         cy.get('[data-target="employee-company-selection.companyLink"]').click()
-
-    })
-
-    it('Create project', () => {    
       
         let random_2_digits = Math.floor(Math.random() * 99);
 

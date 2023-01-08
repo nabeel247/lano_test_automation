@@ -1,14 +1,12 @@
-describe('Create a "self managed" client & send an invoice', () => {
+describe('Send invoice to a newy created self managed client', () => {
 
-    it('Login as a freelancer', () => {
+    it('Add a new self managed client then create & send the invoice', () => {
         cy.viewport(1280, 720)
         cy.visit('https://staging.lano.io/en/login')
         cy.get('#user_email').type('nabeel.ahmed+1578@lano.io')
         cy.get('#user_password').type('Testuser123!') 
         cy.contains('Sign in').click()
-    })
     
-    it('create a self managed client', () => {
         // Goto invoices
         cy.get('#side-menu > li:nth-child(7) > a').click()
 
@@ -45,12 +43,6 @@ describe('Create a "self managed" client & send an invoice', () => {
         cy.get(':nth-child(85) > a').click()
         cy.get('[name="company[vat_id]"]').type('112233')
         cy.get('[data-action="validator#beforeSubmitting invoices--add-company#submitCompany"]').click()
-
-    })
-
-        cy.wait(300)
-    
-    it('Create & send invoice', () => {
 
         // Click 'add item' button 
         cy.get('[data-target="invoices--invoice-items.associationLinkInitial invoices--select-type-form.addDetachedPosition"] > a').click()
@@ -93,6 +85,7 @@ describe('Create a "self managed" client & send an invoice', () => {
 
         // click on 'send' button to send the 'created' invoice
         cy.get('[data-target="invoicing-emails--form.submitButton"]').click()
+
       })
 
     
