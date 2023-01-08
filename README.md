@@ -3,9 +3,9 @@
 ## Steps to run the tests:
 - Download and install cypress.io
 - Go to that {Source folder}/cypress/e2e/
-- Clone this repository in the folder
-- From the {Source folder} directory open command line OR terminal
-- Type "npx cypress open" (for windwos)
+- Clone this repository in the above directory
+- From the {Source folder} open command line OR terminal
+- Type "npx cypress open" (for windows)
 - Select "E2E testing"
 - Select "Chrome" > "Start E2E testing in chrome"
 - Goto specs page
